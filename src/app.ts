@@ -28,6 +28,3 @@ app.use(globalErrorHandler);
 app.use(notFound);
 
 export default app;
-
-// it is a http-status
-// npm i @types/http-status
