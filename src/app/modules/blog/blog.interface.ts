@@ -4,5 +4,4 @@ export type TBlog = {
   image: string;
   category: string;
   tags: string[];
-  postDate: string;
 };

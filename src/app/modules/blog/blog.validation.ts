@@ -7,7 +7,6 @@ const createBlogValidationSchema = z.object({
     content: z.string({ required_error: 'Blog content is required!' }),
     tags: z.array(z.string().trim()).nonempty('Blog tags are required!'),
     category: z.string({ required_error: 'Blog category is required!' }),
-    postDate: z.string({ required_error: 'Blog post date is required!' }),
   }),
 });
 
@@ -21,7 +20,6 @@ const updateBlogValidationSchema = z.object({
       .nonempty('Blog tags are required!')
       .optional(),
     category: z.string().optional(),
-    postDate: z.string().optional(),
   }),
 });
 

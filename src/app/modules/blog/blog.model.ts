@@ -28,11 +28,6 @@ const blogSchema = new Schema<TBlog>(
       trim: true,
       required: [true, 'Blog tags are required!'],
     },
-    postDate: {
-      type: String,
-      trim: true,
-      required: [true, 'Blog postDate is required!'],
-    },
   },
   { timestamps: true },
 );
