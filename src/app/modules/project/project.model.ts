@@ -24,8 +24,7 @@ const projectSchema = new Schema<TProject>(
       required: [true, 'Project features are required!'],
     },
     technologies: {
-      type: String,
-      trim: true,
+      type: [String],
       required: [true, 'Project technologies are required!'],
     },
     liveLink: {

@@ -10,9 +10,9 @@ const createProjectValidationSchema = z.object({
     features: z
       .array(z.string().trim())
       .nonempty('Project images are required!'),
-    technologies: z.string({
-      required_error: 'Project technologies are required!',
-    }),
+    technologies: z
+      .array(z.string().trim())
+      .nonempty('At least one project technology is required!'),
     liveLink: z.string({ required_error: 'Project live link is required!' }),
     serverCodeLink: z.string({
       required_error: 'Project server code link is required!',
@@ -33,9 +33,11 @@ const updateProjectValidationSchema = z.object({
     projectDescription: z.string().optional(),
     features: z
       .array(z.string().trim())
-      .nonempty('Project images are required!')
+      .nonempty('At least one project feature is required!'),
+    technologies: z
+      .array(z.string().trim())
+      .nonempty('At least one project technology is required!')
       .optional(),
-    technologies: z.string().optional(),
     liveLink: z.string().optional(),
     serverCodeLink: z.string().optional(),
     clientCodeLink: z.string().optional(),
